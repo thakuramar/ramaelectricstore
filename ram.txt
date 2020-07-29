@@ -1,1 +1,2 @@
 testing page  and chnaging log file 
+ok let updatefrom local 
