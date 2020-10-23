@@ -1,0 +1,282 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="{% block meta_description %}Welcome to Rama Electric Store we are providing services with expert. {% endblock %}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+ <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <link rel="stylesheet" href="{% static '/css/style2.css' %}">
+
+
+  <!-- Title -->
+  <title>{% block title %}Rama Electric Store{% endblock %}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="{% static '/img/core-img/favicon.ico' %}">
+
+
+
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preload-content">
+      <div id="dento-load"></div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <!-- Top Content -->
+          <div class="col-6 col-md-9 col-lg-8">
+            <div class="top-header-content">
+              <a href="Tel:+977 9841488883 " data-toggle="tooltip" data-placement="bottom" title="Call: +977 9841488883, 9816830121 "><i class="fa fa-phone"></i> <span style="font-size: 130%"> +977 9841488883, 9816830121 </span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@ramaelectricstore.com"><i class="fa fa-envelope"></i> <span  style="font-size: 130%">info@ramaelectricstore.com</span></a>
+            </div>
+          </div>
+          <!-- Top Header Social Info -->
+          <div class="col-6 col-md-3 col-lg-4">
+            <div class="top-header-social-info text-right">
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+              <!-- <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top Header End -->
+
+    <!-- Main Header Start -->
+    <div class="main-header-area">
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container">
+          <!-- Classy Menu -->
+          <nav class="classy-navbar justify-content-between" id="dentoNav">
+
+            <!-- Logo -->
+            <a class="nav-brand" href="{% url 'index' %}"><img src="{% static '/img/core-img/logo.ico' %}" alt=""></a>
+
+            <!-- Navbar Toggler -->
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+
+            <!-- Menu -->
+            <div class="classy-menu">
+
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+
+              <!-- Nav Start -->
+              <div class="classynav">
+                <ul id="nav">
+                  <li><a href="{% url 'index'%}">Home</a></li>
+                  <li><a href="{% url 'about'%}">About</a></li>
+                  <li><a href="{% url 'sales'%}">Sales</a></li>
+
+                  <li><a href="{% url 'service'%}">Services</a>
+                    <ul class="dropdown">
+                      <li><a href="pricing.html"> Electrical Services</a></li>
+                      <li><a href="resi.html"> Residential Services </a></li>
+                      <li><a href="comm.html"> Commercial Services </a></li>
+                      <li><a href="ac.html"> A/C & Heater Services</a></li>
+                      <li><a href="wire.html"> Wiring Services</a></li>
+                      <li><a href="contactor.html"> Electrical Contractors  </a></li>
+
+
+                      <li><a href="dr.html"> Diagnosis & Repair</a></li>
+
+                      <li><a href="solar.html"> Solar Services</a></li>
+                      <li><a href="plumbing.html"> plumbing Services </a></li>
+
+                      <li><a href="#"> More</a>
+                        <ul class="dropdown">
+                          <li><a href="#"> Routine Maintenance </a></li>
+
+<!--                            <ul class="dropdown">-->
+<!--                              <li><a href="#"> Routine Maintenance  </a></li>-->
+
+
+<!--                            </ul>-->
+<!--                          </li>-->
+<!--&lt;!&ndash;                          <li><a href="#"> Dropdown Item</a></li>&ndash;&gt;-->
+
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+
+
+                  <li><a href="{% url 'feedback'%}">Feedback & News</a>
+                    <ul class="dropdown">
+                      <li><a href="#"> News Details</a></li>
+                      <li><a href="{% url 'detail' %}"> Feedback Details</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+              </div>
+              <!-- Nav End -->
+            </div>
+
+            <!-- Booking Now Button -->
+            <a href="#" class="btn dento-btn booking-btn">Service Request</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+{% block content %}
+  {% endblock %}
+
+
+ <!-- ***** Footer Area Start ***** -->
+  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url({% static 'img/bg-img/3.jpg' %});">
+    <div class="container">
+      <div class="row">
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-footer-widget">
+            <a href="{% url 'index' %}" class="d-block mb-4"><img src="{% static '/img/core-img/logo.ico' %}" alt=""></a>
+            <p>Dedicated to helping our customers meet and exceed their goals and
+Creating a great place to work for our employees.</p>
+            <div class="footer-contact">
+              <p><i class="icon_pin"></i> Mahendranagar Dhanaush , Nepal </p>
+              <p><i class="icon_phone"></i> +977 9841488883  , 9816830121 </p>
+              <p><i class="icon_mail"></i> info@ramaelectricstore.com</p>
+              <p><i class="icon_mail"></i> sales@ramaelectricstore.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-sm-6 col-lg">
+          <div class="single-footer-widget">
+            <!-- Widget Title -->
+            <h5 class="widget-title">Opening Hours</h5>
+
+            <!-- Opening Hours -->
+            <ul class="opening-hours">
+              <li><span>Mon-Wed</span> <span>8.00AM - 9.00PM</span></li>
+              <li><span>Thu-Fri</span> <span>8.00AM - 9.00PM</span></li>
+              <li><span>Sat</span> <span>8.00AM - 9.00PM</span></li>
+              <li><span>Sun</span> <span>8.00AM - 9.00PM</span></li>
+              <li><span>Holiday</span> <span>Closed</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-sm-6 col-lg">
+          <div class="single-footer-widget">
+            <!-- Widget Title -->
+            <h5 class="widget-title">Quick Link</h5>
+
+            <!-- Quick Links Nav -->
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Policy</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Advisors</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Legals</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-sm-6 col-lg">
+          <div class="single-footer-widget">
+            <!-- Widget Title -->
+            <h5 class="widget-title">Newsletter</h5>
+
+            <p>We will send out weekly newest article and some great offers</p>
+            <!-- Newsletter Form -->
+            <div class="footer-newsletter-form">
+              <form action="#" method="post">
+                <input type="email" name="nl-email" value="" placeholder="Email Address">
+                <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+              </form>
+            </div>
+
+            <!-- Social Info -->
+            <div class="footer-social-info">
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
+              <!--<a href="#" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus"></i></a> -->
+
+              <!-- <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copywrite Area -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="copywrite-content">
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script>  Rama Electric Store. All rights reserved
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ***** Footer Area End ***** -->
+
+  <!-- ******* All JS ******* -->
+  <!-- jQuery js -->
+  <script src="{% static '/js/jquery.min.js' %}"></script>
+  <!-- Popper js -->
+  <script src="{% static '/js/popper.min.js' %}"></script>
+  <!-- Bootstrap js -->
+  <script src="{% static '/js/bootstrap.min.js' %}"></script>
+  <!-- All js -->
+  <script src="{% static '/js/dento.bundle.js' %}"></script>
+  <!-- Active js -->
+  <script src="{% static '/js/default-assets/active.js' %}"></script>
+
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js' %}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+
+</body>
+</html>
