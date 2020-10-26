@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ramaelectric',
     'rest_framework',
     'django_countries',
+    'import_export',
 
 
 ]

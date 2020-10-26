@@ -1,16 +1,17 @@
 from django.conf.global_settings import EMAIL_HOST_USER
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.views import View
+from django.views.generic import ListView, DetailView
 from django.views.generic import FormView
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.mail import EmailMessage
-from .models import Test, AppointmentForm
-from .forms import TestForm, FormAppointmentForm, ContactPageForm
+from .models import Items, AppointmentForm
+from .forms import ItemsForm, FormAppointmentForm, ContactPageForm
 
 
-class Index(View):
+class Index(View):                                # main menu start
     def get(self, request):
         return render(request, 'index.html')
 
@@ -35,14 +36,34 @@ class Pricing(View):
         return render(request, 'pricing.html')
 
 
-class Detail(View):
+class Eservice(View):    # service section here
     def get(self, request):
-        return render(request, 'f-detail.html')
+        return render(request, 'eservice.html')
 
 
-class Feedback(View):
+class Resi(View):
     def get(self, request):
-        return render(request, 'feedback.html')
+        return render(request, 'resi.html')
+
+
+class Comm(View):
+    def get(self, request):
+        return render(request, 'comm.html')
+
+
+class Contactor(View):
+    def get(self, request):
+        return render(request, 'contractor.html')
+
+
+class Solar(View):
+    def get(self, request):
+        return render(request, 'solar.html')
+
+
+class Plumb(View):
+    def get(self, request):
+        return render(request, 'plumb.html')
 
 
 def contact(request):            # getting contactPage data and sending  direct message to the email.
@@ -72,28 +93,30 @@ def contact(request):            # getting contactPage data and sending  direct 
     return render(request, 'contact.html', {'form': form})
 
 
+class ItemListView(ListView):
+    template_name = 'ramaelectric/items_list.html'  # url will be look like this <appname>/<modelname>_list.html
+    queryset = Items.objects.all()
 
 
-class DetailView(View):
-    def get(self, request, *args, **kwargs):
-        detailobj = Test.objects.all()
+class ItemDetailView(DetailView):
+    template_name = 'ramaelectric/items_detail.html'  # url will be look like this <appname>/<modelname>_Detail.html
+    queryset = Items.objects.all()
 
-        context = {
-            'detailobj': detailobj
-        }
-        return render(request, 'ramaelectric/detail_list.html',  context)
+    # def get_object(self):     # override context data
+    #     d_ = self.kwargs.get("pk")
+    #     return get_object_or_404(Items, id=d_)
+    #
 
-
-class TestCreate(View):
-    def post(self, request, *args, **kwargs):
-        form = TestForm(request.POST or None)
-        if form.is_valid():
-            form.save()
-
-        context = {
-            'form': form
-        }
-        return render(request, 'ramaelectric/test_create.html',  context)
+# class ItemsDetail(View):
+#     def post(self, request, *args, **kwargs):
+#         form = ItemsForm(request.POST or None)
+#         if form.is_valid():
+#             form.save()
+#
+#         context = {
+#             'form': form
+#         }
+#         return render(request, 'ramaelectric/test_create.html',  context)
 
 
 class FormAppointmentFormView(View):   # appointment section form data rendering and save to database

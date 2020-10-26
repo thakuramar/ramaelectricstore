@@ -54,8 +54,8 @@
           <!-- Top Header Social Info -->
           <div class="col-6 col-md-3 col-lg-4">
             <div class="top-header-social-info text-right">
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="https://www.facebook.com/ramaelectrics" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/feed/" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
               <!-- <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
 
@@ -95,26 +95,27 @@
                 <ul id="nav">
                   <li><a href="{% url 'index'%}">Home</a></li>
                   <li><a href="{% url 'about'%}">About</a></li>
-                  <li><a href="{% url 'sales'%}">Sales</a></li>
+
+                  <li><a href="{% url 'sales'%}">Sales</a>
+                    <ul class="dropdown">
+
+                    <li><a href="{% url 'list'%}">New arrivals</a></li>
+
+                    </li>
+                    </ul>
 
                   <li><a href="{% url 'service'%}">Services</a>
                     <ul class="dropdown">
-                      <li><a href="pricing.html"> Electrical Services</a></li>
-                      <li><a href="resi.html"> Residential Services </a></li>
-                      <li><a href="comm.html"> Commercial Services </a></li>
-                      <li><a href="ac.html"> A/C & Heater Services</a></li>
-                      <li><a href="wire.html"> Wiring Services</a></li>
-                      <li><a href="contactor.html"> Electrical Contractors  </a></li>
+                      <li><a href="{% url 'eservice' %}"> Electrical Services</a></li>
+                      <li><a href="{% url 'resi' %}"> Residential Services </a></li>
+                      <li><a href="{% url 'comm' %}"> Commercial Services </a></li>
+                      <li><a href="{% url 'contractor' %}"> Electrical Contractors  </a></li>
+                      <li><a href="{% url 'solar' %}"> Solar Services</a></li>
+                      <li><a href="{% url 'plumb' %}"> plumbing Services </a></li>
 
-
-                      <li><a href="dr.html"> Diagnosis & Repair</a></li>
-
-                      <li><a href="solar.html"> Solar Services</a></li>
-                      <li><a href="plumbing.html"> plumbing Services </a></li>
-
-                      <li><a href="#"> More</a>
-                        <ul class="dropdown">
-                          <li><a href="#"> Routine Maintenance </a></li>
+<!--                      <li><a href="#"> More</a>-->
+<!--                        <ul class="dropdown">-->
+<!--                          <li><a href="#"> Routine Maintenance </a></li>-->
 
 <!--                            <ul class="dropdown">-->
 <!--                              <li><a href="#"> Routine Maintenance  </a></li>-->
@@ -124,27 +125,27 @@
 <!--                          </li>-->
 <!--&lt;!&ndash;                          <li><a href="#"> Dropdown Item</a></li>&ndash;&gt;-->
 
+
+
+
                         </ul>
+
+                    <li>
+                  <a href="{% url 'contact' %}">Contact</a></li>
                       </li>
                     </ul>
                   </li>
 
 
 
-                  <li><a href="{% url 'feedback'%}">Feedback & News</a>
-                    <ul class="dropdown">
-                      <li><a href="#"> News Details</a></li>
-                      <li><a href="{% url 'detail' %}"> Feedback Details</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="{% url 'contact' %}">Contact</a></li>
+
                 </ul>
               </div>
               <!-- Nav End -->
             </div>
 
             <!-- Booking Now Button -->
-            <a href="#" class="btn dento-btn booking-btn">Service Request</a>
+            <a href="{% url 'contact' %}" class="btn dento-btn booking-btn">Service Request</a>
           </nav>
         </div>
       </div>
@@ -200,15 +201,14 @@ Creating a great place to work for our employees.</p>
             <!-- Quick Links Nav -->
             <nav>
               <ul class="quick-links">
-                <li><a href="#">About</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
                 <li><a href="#">Policy</a></li>
-                <li><a href="#">News</a></li>
+
                 <li><a href="#">Advisors</a></li>
                 <li><a href="#">Careers</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Legals</a></li>
+                <li><a href="{% url 'service'%}">Services</a></li>
+
               </ul>
             </nav>
           </div>
@@ -224,6 +224,7 @@ Creating a great place to work for our employees.</p>
             <!-- Newsletter Form -->
             <div class="footer-newsletter-form">
               <form action="#" method="post">
+                {% csrf_token %}
                 <input type="email" name="nl-email" value="" placeholder="Email Address">
                 <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
               </form>
@@ -231,8 +232,8 @@ Creating a great place to work for our employees.</p>
 
             <!-- Social Info -->
             <div class="footer-social-info">
-              <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="https://www.facebook.com/ramaelectrics" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/feed/" data-toggle="tooltip" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
               <!--<a href="#" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus"></i></a> -->
 

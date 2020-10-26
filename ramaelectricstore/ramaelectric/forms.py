@@ -1,14 +1,11 @@
 from django import forms
-from .models import Test, AppointmentForm, ContactPage
+from .models import Items, AppointmentForm, ContactPage
 
 
-class TestForm(forms.ModelForm):
+class ItemsForm(forms.ModelForm):  # Items Form
     class Meta:
-        Model = Test
-        fields = [
-            'name',
-            'description'
-        ]
+        Model = Items
+        fields = '__all__'
 
 
 class FormAppointmentForm(forms.ModelForm):     # appointment booking form

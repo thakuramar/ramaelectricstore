@@ -16,23 +16,37 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from .views import Index, About, Sales, Service, Pricing, Detail, Feedback,  contact, \
-    DetailView, TestCreate, FormAppointmentFormView
+from .views import Index, About, Sales, Service, Eservice, Resi, Comm, Contactor, Plumb, Solar,  contact, \
+    ItemListView, ItemDetailView, FormAppointmentFormView
+
+
+#app_name = 'ramaelectric'
 
 urlpatterns = [
     path('', Index.as_view(), name='index'),
     path('about.html', About.as_view(), name='about'),
     path('service.html', Service.as_view(), name='service'),
-    path('pricing.html', Pricing.as_view(), name='pricing'),
     path('sales.html', Sales.as_view(), name='sales'),
-    path('feedback.html', Feedback.as_view(), name='feedback'),
-    path('f-detail.html', Detail.as_view(), name='f-detail'),
 
-    path('detail_list.html', DetailView.as_view(), name='detail'),
-    path('test_create.html', TestCreate.as_view(), name='create'),
+
+    path('eservice.html', Eservice.as_view(), name='eservice'),
+    path('resi.html', Resi.as_view(), name='resi'),
+    path('comm.html', Comm.as_view(), name='comm'),
+    path('contractor.html', Contactor.as_view(), name='contractor'),
+    path('solar.html', Solar.as_view(), name='solar'),
+    path('plumb.html', Plumb.as_view(), name='plumb'),
+
+
+
+
+    path('items_list.html',  ItemListView.as_view(), name='list'),
+    path('ramaelectric/<int:pk>',  ItemDetailView.as_view(), name='detail'),
+    # path('test_create.html', ItemsCreate.as_view(), name='create'),
     path('appointment.html', FormAppointmentFormView.as_view(), name='appointment'),
 
     path('contact.html', views.contact, name='contact'),
+
+
 
 
 

@@ -141,7 +141,8 @@ ul {
 
 .bg-img {
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
+
   background-repeat: no-repeat; }
 
 .jarallax {
@@ -149,7 +150,7 @@ ul {
   z-index: 0; }
   .jarallax > .jarallax-img {
     position: absolute;
-    object-fit: cover;
+    object-fit: contain;
     font-family: 'object-fit: cover;';
     top: 0;
     left: 0;
@@ -527,6 +528,7 @@ ul {
 .welcome-welcome-slide {
   position: relative;
   z-index: 2;
+
   width: 100%;
   height: 800px; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -543,7 +545,7 @@ ul {
   position: relative;
   z-index: 1; }
   .welcome-text h2 {
-    font-size: 55px;
+    font-size: 45px;
     color: #ffffff;
     margin-bottom: 30px;
     display: block;
@@ -560,7 +562,7 @@ ul {
       .welcome-text h2 {
         font-size: 24px; } }
   .welcome-text p {
-    font-size: 20px;
+    font-size: 21px;
     color: #ffffff;
     margin-bottom: 40px; }
     @media only screen and (min-width: 992px) and (max-width: 1199px) {

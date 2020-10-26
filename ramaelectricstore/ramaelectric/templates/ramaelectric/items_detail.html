@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <!-- Output table -->
+
+
+<h2> Items detail  </h2>
+
+<h2>{{ object.name}}</h2>
+<h2> {{ object.description}}</h2>
+<img src="{{ Items.img.url }}", alt=" new wire pic"  width="500" height="600">
+
+
+<a href="ramaelectric/Items">Back</a>
+
+{% endblock %}

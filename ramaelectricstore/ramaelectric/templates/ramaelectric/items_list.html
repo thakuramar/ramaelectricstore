@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <!-- Output table -->
+<center>
+    <h6>Items Available List</h6>
+      <table id="myTable" border="1" >
+          <style>
+table, th, td {
+  border: 1px solid green;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+#t01 {
+  width: 50%;
+  background-color: #f1f1c1;
+}
+
+a {
+  color: hotpink;
+}
+
+
+</style>
+
+          <thead>
+
+              <th style="width:25%">Name</th>
+                <th style="width:25%">Description </th>
+                <th style="width:10%">Size</th>
+              <th style="width:20%">Images</th>
+              </tr>
+          </thead>
+
+          <tbody>
+          {% for item in object_list %}
+              <tr>
+                  <td><b><a href="/ramaelectric/Items/{{ item.pk }}" target="_blank">{{ item.name }}</a></b></td>
+
+                <td>{{ item.description }}</td>
+                  <td>{{ item.size }}</td>
+                  <td> <a href="/ramaelectric/Items/{{ item.pk }}" target="_blank" >{{ item.img }}</a></td>
+              </tr>
+          {% endfor %}
+          </tbody>
+
+      </table>
+    </center>
+<br> <br> <br><br>
+{% endblock %}

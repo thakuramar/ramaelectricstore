@@ -1,12 +1,15 @@
 from django.db import models
 
-# Create your models here.
+# testing model for importing excel or csv file directly through admin panel & convert into model data
 
 
-class Test(models.Model):
+class Items(models.Model):
     name = models.CharField(max_length=20)
     description = models.TextField()
-    completed = models.DateField(auto_now_add=True)
+    model_type = models.CharField(max_length=50)
+    size = models.CharField(max_length=50)
+    arrival_date = models.CharField(max_length=10 , blank=True, null=True)
+    img = models.ImageField(upload_to='images', blank=True, null=True)
 
     def __str__(self):
         return self.name

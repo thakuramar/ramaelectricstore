@@ -18,10 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.urls.conf import include
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ramaelectric.urls')),
+
+    path('', RedirectView.as_view(url='ramaelectric')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
