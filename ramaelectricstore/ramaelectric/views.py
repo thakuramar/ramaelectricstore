@@ -66,7 +66,7 @@ class Plumb(View):
         return render(request, 'plumb.html')
 
 
-def contact(request):            # getting contactPage data and sending  direct message to the company email and the same email response back to the sender email.
+def contact(request):            # getting contactPage form data and sending  direct message to the company email and the same email response back to the sender email.
     if request.method == 'GET':
         form = ContactPageForm()
     else:
