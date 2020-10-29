@@ -1,16 +1,66 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %} Details|Rama Electric Store {% endblock %}
+
+<!-- Output table -->
+<style type="text/css">
+.column {
+  float: left;
+
+
+   /* Should be removed. Only for demonstration */
+}
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+/* zooming section  */
+
+</style>
 
 {% block content %}
-        <!-- Output table -->
 
 
-<h2> Items detail  </h2>
+<!--context will come as same name of our model  here is like items -->
+    <div class="row">
+        <div class="column left" style="background-color:white;">
 
-<h2>{{ object.name}}</h2>
-<h2> {{ object.description}}</h2>
-<img src="{{ Items.img.url }}", alt=" new wire pic"  width="500" height="600">
+            {% ifequal items.img None %}
+                <p>No Image Available</p>
+            {% else %}
 
+                <img  src="{{ items.img.url }}"  class="img-responsive thumbnail "  width="600" height="500">
+            {% endifequal %}
 
-<a href="ramaelectric/Items">Back</a>
+        </div>
+        <br><br>
+            <div class="column right" style="background-color:white;">
+
+                <h6 style="padding-left: 30px;" >{{ items.name}}</h6>
+                <span style="padding-left: 30px;"><strong>Size:</strong> </span>   <span style="">{{ items.size}} &nbsp;</span>
+                <span style="padding-left: 10px;"><strong>Model:</strong> </span>  <span style="">{{ items.model_type}}</span>
+                <span style="padding-left: 30px;"><strong>Brand:</strong> </span>   <span style="">{{ items.brand|default_if_none:"&nbsp;"}} &nbsp;</span>
+                <span style="padding-left: 10px;"><strong>Item:</strong> </span>  <span style="">{{ items.item|default_if_none:"&nbsp;"}}</span>
+                <p style="padding-left: 30px;">{{ items.description}}</p>
+                <p style="padding-left: 30px;"><b>{{ items.delivery|default_if_none:"&nbsp;"}}</b></p>
+                <a href="{% url 'list' %}"  style="padding-left: 30px" >&nbsp;<input type="button" value="Back" class="btn btn-info btn-sm" /></a>
+                <br><br>
+
+        </div>
+    </div>
 
 {% endblock %}

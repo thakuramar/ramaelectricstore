@@ -66,6 +66,11 @@ class Plumb(View):
         return render(request, 'plumb.html')
 
 
+class Career(View):
+    def get(self, request):
+        return render(request, 'career.html')
+
+
 def contact(request):            # getting contactPage data and sending  direct message to the email.
     if request.method == 'GET':
         form = ContactPageForm()
@@ -95,12 +100,12 @@ def contact(request):            # getting contactPage data and sending  direct 
 
 class ItemListView(ListView):
     template_name = 'ramaelectric/items_list.html'  # url will be look like this <appname>/<modelname>_list.html
-    queryset = Items.objects.all()
+    model = Items
 
 
 class ItemDetailView(DetailView):
     template_name = 'ramaelectric/items_detail.html'  # url will be look like this <appname>/<modelname>_Detail.html
-    queryset = Items.objects.all()
+    model = Items
 
     # def get_object(self):     # override context data
     #     d_ = self.kwargs.get("pk")

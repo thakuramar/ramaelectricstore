@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Career | Rama Electric Store{% endblock %}
+{% block meta_description %}Our licensed specialists offer a wide range of residential and commercial electrical services.{% endblock %}
+{% block content %}
+<style>
+.alert {
+   width:100%;
+   height: 40px;
+ margin-bottom: 1px;
+  padding:0px 15px;
+}
+</style>
+
+<center>
+<section class="dento-about-us-area section-padding-15-0">
+
+
+        <!-- About Content -->
+        <div class="col-12 col-md-6">
+          <div class="about-us-content mb-30">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <h4>Career </h4>
+              <div class="line"></div>
+            </div>
+
+
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!--career descriptions -->
+
+<div class="alert alert-primary" role="alert">
+  <h4>Positions Open</h4>
+</div><br>
+
+    <h4> Electrical Helper  </h4>
+    <span style="padding-left: 30px;"><strong>Job Category:</strong> </span>   <span style="">Services & Solutions</span>
+    <span style="padding-left: 30px;"><strong>Job Type :</strong> </span>   <span style="">Full Time</span>
+    <br><br>
+    <h4> Store Staff  </h4>
+    <span style="padding-left: 30px;"><strong>Job Category:</strong> </span>   <span style="">Services & Solutions</span>
+    <span style="padding-left: 30px;"><strong>Job Type :</strong> </span>   <span style="">Full Time</span>
+    <br><br>
+
+        <p> <a class="btn btn-link btn-sm" href="{% url 'contact' %}" role="button">Contact</a>  directly with phone and email to get more details.</p>
+</div>
+
+</center>
+
+  <!-- ****** About Us Area End ****** -->
+
+  <div class="container">
+    <div class="dento-border clearfix"></div>
+  </div>
+
+  <!-- Cool Facts Area Start -->
+  <section class="dento-cta-area">
+    <div class="container">
+      <div class="row">
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="icon_genius"></i>
+            <h2><span class="counter">8</span>+</h2>
+            <h5>Years Of Experience</h5>
+          </div>
+        </div>
+
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="icon_heart_alt"></i>
+            <h2><span class="counter">900</span>+</h2>
+            <h5>Happy Clients</h5>
+          </div>
+        </div>
+
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="icon_book_alt"></i>
+            <h2><span class="counter">100</span>%</h2>
+            <h5>Guaranteed</h5>
+          </div>
+        </div>
+
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="icon_id"></i>
+            <h2><span class="counter">10</span>+</h2>
+            <h5>Teams</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Cool Facts Area End -->
+
+
+  <!-- ***** Testimonials Area Start ***** -->
+  <section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url({% static '/img/bg-img/7.png' %});">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Testimonials Slides -->
+          <div class="testimonials-slides owl-carousel">
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static '/img/bg-img/80.png' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“ I want to thank you all for your excellent service, technicians, just everything. My husband and I are very pleased. We will be calling again! ”</h5>
+                <h6>Neeva Singh </h6>
+                <p> Electrical Client</p>
+              </div>
+            </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static '/img/bg-img/81.jpg' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“ Thank you for your great services, The service was excellent, Timely and professional. In future, I would contact  only this electrical company. ”</h5>
+                <h6>Ramesh Pokharel  </h6>
+                <p>Commercial Client </p>
+              </div>
+            </div>
+              <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static '/img/bg-img/83.jpg' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“Great customer service takes your business to the next level, and ensure your success. Your product and price  was amazing.I am very impressed! A great person and company. ”</h5>
+                <h6>Kunal Mahaseth  </h6>
+                <p>Commercial Contractor </p>
+              </div>
+            </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static '/img/bg-img/82.jpg' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“ Great service and great technicians, I just wanted to say your electrician did wonderful job. I will highly recommend to all my friends, Thank you! ”</h5>
+                <h6>Rajendra Yadav </h6>
+                <p>Residential Client </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Testimonials Area End ***** -->
+
+
+
+
+
+{% endblock %}

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from .views import Index, About, Sales, Service, Eservice, Resi, Comm, Contactor, Plumb, Solar,  contact, \
+from .views import Index, About, Sales, Service, Eservice, Resi, Comm, Contactor, Plumb, Solar,Career,  contact, \
     ItemListView, ItemDetailView, FormAppointmentFormView
 
 
@@ -35,12 +35,13 @@ urlpatterns = [
     path('contractor.html', Contactor.as_view(), name='contractor'),
     path('solar.html', Solar.as_view(), name='solar'),
     path('plumb.html', Plumb.as_view(), name='plumb'),
+    path('career.html', Career.as_view(), name='career'),
 
 
 
 
     path('items_list.html',  ItemListView.as_view(), name='list'),
-    path('ramaelectric/<int:pk>',  ItemDetailView.as_view(), name='detail'),
+    path('ramaelectric/<int:pk>', ItemDetailView.as_view(), name='detail'),
     # path('test_create.html', ItemsCreate.as_view(), name='create'),
     path('appointment.html', FormAppointmentFormView.as_view(), name='appointment'),
 

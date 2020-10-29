@@ -4,7 +4,9 @@ from .models import Items, AppointmentForm
 
 
 class ItemsAdmin(ImportExportModelAdmin):
-    pass
+    list_display = ['name', 'updated_on']
+    search_fields = ['name', 'brand', 'arrival_date']
+    list_filter = ['updated_on']
 
 
 # Register your models here.
