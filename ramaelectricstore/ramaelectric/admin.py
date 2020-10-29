@@ -9,8 +9,12 @@ class ItemsAdmin(ImportExportModelAdmin):
     list_filter = ['updated_on']
 
 
-# Register your models here.
-admin.site.register(Items, ItemsAdmin)
+class AppointmentFormAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'phone', 'updated_date']
+    search_fields = ['name', 'address', 'updated_date']
+    list_filter = ['updated_date']
 
-admin.site.register(AppointmentForm)
+
+admin.site.register(Items, ItemsAdmin)
+admin.site.register(AppointmentForm, AppointmentFormAdmin)
 

@@ -40,6 +40,7 @@ class AppointmentForm(models.Model):
     address = models.CharField(max_length=100)
     schedule = models.CharField(max_length=50)
     day = models.CharField(max_length=50, null=True, blank=True)
+    updated_date = models.DateTimeField(auto_now_add=True, editable=False, null=True, blank=True)
 
     def __str__(self):
         return self.name
