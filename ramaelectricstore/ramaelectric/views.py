@@ -66,12 +66,16 @@ class Plumb(View):
         return render(request, 'plumb.html')
 
 
+<<<<<<< HEAD
 class Career(View):
     def get(self, request):
         return render(request, 'career.html')
 
 
 def contact(request):            # getting contactPage data and sending  direct message to the email.
+=======
+def contact(request):            # getting contactPage form data and sending  direct message to the company email and the same email response back to the sender email.
+>>>>>>> 7552808119fab7f85102e3d740276d310034b071
     if request.method == 'GET':
         form = ContactPageForm()
     else:

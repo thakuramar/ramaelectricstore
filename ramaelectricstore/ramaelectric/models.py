@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
-# testing model for importing excel or csv file directly through admin panel & convert into model data
+# Items model for importing excel or csv file directly through admin panel & convert into model data and same data shows into service page. 
 
 
 class Items(models.Model):
