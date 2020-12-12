@@ -18,8 +18,8 @@
               <div class="welcome-text text-center">
 
                 <div class="welcome-btn-group">
-                  <a href="{% url 'service'%}" class="btn dento-btn mx-2" data-animation="fadeInUp" data-delay="500ms">Get Started</a>
-<!--                  <a href="{% url 'contact'%}" class="btn dento-btn mx-2 active" data-animation="fadeInUp" data-delay="700ms">Contact Us</a>-->
+                <!--   <a href="{% url 'service'%}" class="btn dento-btn mx-2" data-animation="fadeInUp" data-delay="500ms">Get Started</a>
+                 <a href="{% url 'contact'%}" class="btn dento-btn mx-2 active" data-animation="fadeInUp" data-delay="700ms">Contact Us</a>-->
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
                   <img src="{% static './img/core-img/s1.jpg' %}" alt="">
-                  <h6>Electrical Services</h6>
+                  <a href="{% url 'eservice' %}"><h6>Electrical Services</h6></a>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
                   <img src="{% static '/img/core-img/s2.jpg' %}" alt="">
-                  <h6>Commercial Services</h6>
+                  <a href="{% url 'comm' %}"><h6>Commercial Services</h6></a>
                 </div>
               </div>
 
@@ -83,7 +83,7 @@
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
                   <img src="{% static '/img/core-img/s3.jpg' %}" alt="">
-                  <h6>Residential Services</h6>
+                  <a href="{% url 'resi' %}"><h6>Residential Services</h6></a>
                 </div>
               </div>
 
@@ -91,7 +91,7 @@
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
                   <img src="{% static '/img/core-img/s4.jpg' %}" alt="">
-                  <h6>Electrical Contractors</h6>
+                  <a href="{% url 'contractor' %}"><h6>Electrical Contractors</h6></a>
                 </div>
               </div>
 
@@ -99,7 +99,7 @@
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
                   <img src="{% static '/img/core-img/s5.jpg' %}" alt="">
-                  <h6>Solar Services</h6>
+                  <a href="{% url 'solar' %}"><h6>Solar Services</h6></a>
                 </div>
               </div>
 
@@ -107,7 +107,7 @@
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
                   <img src="{% static '/img/core-img/s6.jpg' %}" alt="">
-                  <h6>Plumbing Services</h6>
+                  <a href="{% url 'plumb' %}"><h6>Plumbing Services</h6></a>
                 </div>
               </div>
             </div>
@@ -152,9 +152,9 @@
             <h5> Repairs and installations</h5>
               <ul>
                 <li>• Electrical Wiring</li>
-                <li>• AC/heater </li>  <li>• Fridge	</li>
+                <li>• AC/Heater </li>  <li>• Fridge	</li>
               <li>• Motor	</li>    <li>• Fan 	</li>
-              <li>• Solar System</li> <li>• plumbing</li>
+              <li>• Solar System</li> <li>• Plumbing</li>
               <li>•	LED Lighting</li>
 
                 </ul>

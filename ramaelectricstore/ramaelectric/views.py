@@ -95,6 +95,7 @@ def contact(request):            # getting contactPage form data and sending  di
                  fail_silently=False,
 
              )
+
         return render(request, 'contact.html', {'form': form, 'message_name': message_name})
     return render(request, 'contact.html', {'form': form})
 

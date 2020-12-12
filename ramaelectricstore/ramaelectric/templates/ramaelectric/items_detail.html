@@ -50,11 +50,13 @@
         <br><br>
             <div class="column right" style="background-color:white;">
 
-                <h6 style="padding-left: 30px;" >{{ items.name}}</h6>
+                <h6 style="padding-left: 30px;" ><strong>{{ items.name}}</strong></h6>
                 <span style="padding-left: 30px;"><strong>Size:</strong> </span>   <span style="">{{ items.size}} &nbsp;</span>
                 <span style="padding-left: 10px;"><strong>Model:</strong> </span>  <span style="">{{ items.model_type}}</span>
-                <span style="padding-left: 30px;"><strong>Brand:</strong> </span>   <span style="">{{ items.brand|default_if_none:"&nbsp;"}} &nbsp;</span>
+                <span style="padding-left: 10px;"><strong>Brand:</strong> </span>   <span style="">{{ items.brand|default_if_none:"&nbsp;"}} &nbsp;</span>
                 <span style="padding-left: 10px;"><strong>Item:</strong> </span>  <span style="">{{ items.item|default_if_none:"&nbsp;"}}</span>
+                <span style="padding-left: 10px; "><strong>Price Rs.</strong> </span>  <span  style="color:#00adef; font-weight:bold; font-size:18px"><strong>{{ items.price|default_if_none:"&nbsp;"}}</strong></span>
+                </br>
                 <p style="padding-left: 30px;">{{ items.description}}</p>
                 <p style="padding-left: 30px;"><b>{{ items.delivery|default_if_none:"&nbsp;"}}</b></p>
                 <a href="{% url 'list' %}"  style="padding-left: 30px" >&nbsp;<input type="button" value="Back" class="btn btn-info btn-sm" /></a>

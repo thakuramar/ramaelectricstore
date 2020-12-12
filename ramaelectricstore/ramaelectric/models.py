@@ -8,6 +8,7 @@ class Items(models.Model):
     name = models.CharField(max_length=20)
     brand = models.CharField(max_length=20, blank=True, null=True)
     item = models.CharField(max_length=20, blank=True, null=True)
+    price = models.DecimalField(max_digits=6, decimal_places=0, blank=True, null=True)
     delivery = models.CharField(max_length=100, blank=True, null=True)
     description = models.TextField()
     model_type = models.CharField(max_length=50)
@@ -21,6 +22,9 @@ class Items(models.Model):
 
     def __str__(self):
         return self.name
+
+    def __str__(self):
+        return str(self.item) + ": Rs. " + str(self.price)
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'pk': self.pk})
