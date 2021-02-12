@@ -47,7 +47,7 @@
         <div class="col-12 col-md-3">
           <div class="contact-information">
             <h5>Address</h5>
-            <p> Mahendranagar Dhanaush , Nepal</p>
+            <p>Mahendranagar(Durga Chowk) Dhanaush, Nepal</p>
 
             <h5>Phone</h5>
             <p> +977 9841488883 , 9816830121</p>
@@ -67,6 +67,12 @@
               <h2>Contact Us</h2>
               <div class="line"></div>
             </div>
+<!--            <div>-->
+<!--              {% for message in messages %}-->
+<!--              <h3> {{message}} </h3>-->
+<!--              {% endfor %}-->
+
+<!--            </div>-->
             <!-- Form -->
             <form action="{% url 'contact' %}" method="post" enctype="multipart/form-data">
                 {%  csrf_token %}
@@ -76,7 +82,7 @@
                 </div>
                   <div class="col-lg-5">
 
-                    <input type="text" name="phone" class="form-control mb-30" placeholder="Your Phone Number">
+                    <input required type="text" name="phone" class="form-control mb-30" placeholder="Your Phone Number">
                     {% for err in form.phone.errors %}
                     <small class="text-danger ml-2 ">{{ err }}</small>
                     {% endfor  %}
@@ -84,6 +90,7 @@
                   </div>
                 <div class="col-lg-5">
                   <input type="email" name="email" class="form-control mb-30" placeholder="Your Email">
+
                 </div>
                 <!-- uploading file section-->
 <!--                <div class="col-lg-5">-->

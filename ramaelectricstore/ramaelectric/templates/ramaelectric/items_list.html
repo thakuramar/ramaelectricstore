@@ -22,16 +22,18 @@
 <!--</style>-->
         <!-- Output table -->
 <center>
-    <h6>Items Available List</h6>
+    <h6>Items Available</h6>
       <table class="table table-hover table-sm" >
 
 
           <thead class="table-primary">
           <tr>
-              <th scope="col" style="width:10%" > Items Name</th>
+              <th scope="col" style="width:10%; padding-left: 20px" > Items Name</th>
                 <th scope="col" style="width:40%">Description </th>
                 <th scope="col" style="width:10%">Size</th>
-              <th scope="col" style="width:20%" >Brand</th>
+              <th scope="col" style="width:10%" >Brand</th>
+              <th scope="col" style="width:10%" >Price</th>
+              <th scope="col" style="width:5%" ></th>
 
 
               </tr>
@@ -45,7 +47,9 @@
                 <td>{{ item.description }}</td>
                   <td>{{ item.size }}</td>
 
-                  <td> <a href="{{ item.get_absolute_url  }}" target="_blank">{{ item.brand|default_if_none:"&nbsp; &nbsp;&nbsp; "}}<input type="button"  style="margin:7px;" value="Details" class="btn btn-info btn-sm" /></a></td>
+                  <td> {{ item.brand|default_if_none:"&nbsp; &nbsp;&nbsp; "}}</td>
+                  <td> Rs.   <strong>{{ item.price|default_if_none:"&nbsp; &nbsp; "}} </strong></td>
+                  <td> <a href="{{ item.get_absolute_url  }}" target="_blank"><input type="button"  style="margin:0px;" value="Details" class="btn btn-info btn-sm" /></a></td>
               </tr>
           {% endfor %}
           </tbody>

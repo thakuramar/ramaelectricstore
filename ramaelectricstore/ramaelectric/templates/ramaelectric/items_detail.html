@@ -3,66 +3,82 @@
 {% block title %} Details|Rama Electric Store {% endblock %}
 
 <!-- Output table -->
-<style type="text/css">
-.column {
-  float: left;
+<!--<style type="text/css">-->
+<!--.column {-->
+<!--  float: left;-->
 
 
-   /* Should be removed. Only for demonstration */
-}
-.left {
-  width: 70%;
-}
+<!--   /* Should be removed. Only for demonstration */-->
+<!--}-->
+<!--.left {-->
+<!--  width: 70%;-->
+<!--}-->
 
-.right {
-  width: 30%;
-}
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-/* zooming section  */
+<!--.right {-->
+<!--  width: 30%;-->
+<!--}-->
+<!--/* Clear floats after the columns */-->
+<!--.row:after {-->
+<!--  content: "";-->
+<!--  display: table;-->
+<!--  clear: both;-->
+<!--}-->
+<!--@media screen and (max-width: 600px) {-->
+<!--  .column {-->
+<!--    width: 100%;-->
+<!--  }-->
+<!--}-->
+<!--/* zooming section  */-->
 
-</style>
+<!--</style>-->
 
 {% block content %}
 
 
 <!--context will come as same name of our model  here is like items -->
     <div class="row">
-        <div class="column left" style="background-color:white;">
+
+        <div class="col-7"  style="background-color:white;">
 
             {% ifequal items.img None %}
                 <p>No Image Available</p>
             {% else %}
 
-                <img  src="{{ items.img.url }}"  class="img-responsive thumbnail "  width="600" height="500">
+                <img  src="{{ items.img.url }}"  class="img-responsive thumbnail " style="padding-left: 10px" width="700" height="700">
             {% endifequal %}
 
-        </div>
-        <br><br>
-            <div class="column right" style="background-color:white;">
 
-                <h6 style="padding-left: 30px;" ><strong>{{ items.name}}</strong></h6>
-                <span style="padding-left: 30px;"><strong>Size:</strong> </span>   <span style="">{{ items.size}} &nbsp;</span>
-                <span style="padding-left: 10px;"><strong>Model:</strong> </span>  <span style="">{{ items.model_type}}</span>
-                <span style="padding-left: 10px;"><strong>Brand:</strong> </span>   <span style="">{{ items.brand|default_if_none:"&nbsp;"}} &nbsp;</span>
-                <span style="padding-left: 10px;"><strong>Item:</strong> </span>  <span style="">{{ items.item|default_if_none:"&nbsp;"}}</span>
-                <span style="padding-left: 10px; "><strong>Price Rs.</strong> </span>  <span  style="color:#00adef; font-weight:bold; font-size:18px"><strong>{{ items.price|default_if_none:"&nbsp;"}}</strong></span>
-                </br>
-                <p style="padding-left: 30px;">{{ items.description}}</p>
-                <p style="padding-left: 30px;"><b>{{ items.delivery|default_if_none:"&nbsp;"}}</b></p>
-                <a href="{% url 'list' %}"  style="padding-left: 30px" >&nbsp;<input type="button" value="Back" class="btn btn-info btn-sm" /></a>
-                <br><br>
+          <div class="row">
+
+                {% for im in items.itemsimage_set.all %}  <!-- itemsimage need to write in lowercase even though model name is capital letter in model name -->
+                <div class="row">
+                    <img  src="{{ im.img.url }}"  class="img-fluid" style=object-fit:contain; width="300" height="300";   alt="">
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+        <br><br><br>
+            <div  class="col-5" style="background-color:white;">
+<br><br>
+                <h6 style="padding-left: 10px;" ><strong>{{ items.name}}</strong> <span style="padding-left: 70px; "><strong> Rs.</strong> </span>  <span  style="color:#00adef; font-weight:bold; font-size:18px"><strong>{{ items.price|default_if_none:"&nbsp;"}}</strong></span></h6>
+                <hr>
+                <span  style="padding-left: 10px;line-height: 1"><strong>Size:&nbsp;</strong> </span>   <span style="">{{ items.size}} &nbsp;</span>
+                <span style="padding-left: 10px;"><strong>Model:&nbsp;</strong> </span>  <span style="">{{ items.model_type}}</span>
+                <span style="padding-left: 10px;"><strong>Brand:&nbsp;</strong> </span>   <span style="">{{ items.brand|default_if_none:"&nbsp;"}} &nbsp;</span>
+                <span style="padding-left: 10px;"><strong>Item:&nbsp;</strong> </span>  <span style="">{{ items.item|default_if_none:"&nbsp;"}}</span>
+
+                <p style="padding-left: 10px;line-height: 3">{{ items.description}}</p>
+                <p style="padding-left: 10px;">{{ items.delivery|default_if_none:"&nbsp;"}}</p>
+                <a href="{% url 'list' %}"  style="padding-left: 20px" >&nbsp;<input type="button" value="Back" class="btn btn-info btn-sm" /></a>
+                <br>
 
         </div>
     </div>
+
+
+
 
 {% endblock %}

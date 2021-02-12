@@ -2,10 +2,12 @@ from django.conf.global_settings import EMAIL_HOST_USER
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.views import View
+
 from django.views.generic import ListView, DetailView
 from django.views.generic import FormView
 from django.conf import settings
 from django.core.mail import send_mail
+from django.contrib import messages
 from django.core.mail import EmailMessage
 from .models import Items, AppointmentForm
 from .forms import ItemsForm, FormAppointmentForm, ContactPageForm
@@ -77,11 +79,13 @@ def contact(request):            # getting contactPage form data and sending  di
         form = ContactPageForm()
     else:
         form = ContactPageForm(request.POST)
+
         if form.is_valid():
             message_name = form.cleaned_data['name']
             message_phone = form.cleaned_data['phone']
             message_email = form.cleaned_data['email']
             message_body = form.cleaned_data['message']
+
 
             appointment = ' Sender name:__' + message_name + '    Phone:__' + message_phone + '    email:__'\
                           + message_email + '     Message:__' + message_body
@@ -96,8 +100,11 @@ def contact(request):            # getting contactPage form data and sending  di
 
              )
 
-        return render(request, 'contact.html', {'form': form, 'message_name': message_name})
+            return render(request, 'contact.html', {'form': form, 'message_name': message_name})
+        messages.info(request, 'Failed Try Again !  with correct information.')
     return render(request, 'contact.html', {'form': form})
+
+
 
 
 class ItemListView(ListView):
@@ -126,17 +133,19 @@ class ItemDetailView(DetailView):
 #         return render(request, 'ramaelectric/test_create.html',  context)
 
 
-class FormAppointmentFormView(View):   # appointment section form data rendering and save to database
+class FormAppointmentFormView(View):
     def get(self, request, *args, **kwargs):
         form = FormAppointmentForm()
         context = {'form': form}
         return render(request, 'appointment.html', context)
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):   # appointment section form data rendering and save to database
         form = FormAppointmentForm(request.POST or None)
         if form.is_valid():
             form.save()
+
             return render(request, 'appointment.html', {'form': form})
+
 
 
 

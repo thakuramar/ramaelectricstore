@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.core.validators import RegexValidator, validate_email,validate_slug
 
 # Items model for importing excel or csv file directly through admin panel & convert into model data and same data shows into service page. 
 
@@ -29,6 +30,14 @@ class Items(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'pk': self.pk})
 
+
+class ItemsImage(models.Model):  # for uploding multiple image
+    items = models.ForeignKey(Items, on_delete=models.CASCADE)
+    img = models.ImageField(upload_to='images/', blank=True, null=True, default='/images/logo.jpg')
+
+    def __str__(self):
+        return self.items.name
+
     # @property
     # def image_url(self):
     #     if self.img:
@@ -52,8 +61,10 @@ class AppointmentForm(models.Model):
 
 class ContactPage(models.Model):
     name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=10)
-    email = models.EmailField()
+    phone_regex = RegexValidator(regex=r'^\+?0?\d{9,13}$',
+                                 message="Phone number must be in the format: '+999999999'")
+    phone = models.CharField(validators=[phone_regex], max_length=13)
+    email = models.EmailField(null=True, blank=True)
     message = models.CharField(max_length=200)
 
     def __str__(self):

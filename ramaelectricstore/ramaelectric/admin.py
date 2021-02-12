@@ -1,6 +1,6 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from .models import Items, AppointmentForm
+from .models import Items, AppointmentForm, ItemsImage
 
 
 class ItemsAdmin(ImportExportModelAdmin):
@@ -15,6 +15,11 @@ class AppointmentFormAdmin(admin.ModelAdmin):
     list_filter = ['updated_date']
 
 
+class ItemsImageAdmin(admin.ModelAdmin):
+    list_display = ['items']
+
+
 admin.site.register(Items, ItemsAdmin)
 admin.site.register(AppointmentForm, AppointmentFormAdmin)
 
+admin.site.register(ItemsImage, ItemsImageAdmin)
