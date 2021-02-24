@@ -20,6 +20,9 @@ Ramaelectricstore is an electrical sales and service company based in Nepal. The
 - Can import and export the third party data and integrate with the applications.
 - Can reassign an employee to the target locations in order to complete the task. 
 
+## License & copyright
 
+© Amarnath Thakur\
+Licensed under the [MIT license](LICENSE).
 
 
