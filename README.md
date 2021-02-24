@@ -25,4 +25,8 @@ Ramaelectricstore is an electrical sales and service company based in Nepal. The
 © Amarnath Thakur\
 Licensed under the [MIT license](LICENSE).
 
+## Feedback
+Any suggestion and feedback is welcome. You can message me on facebook
+https://github.com/thakuramar
+
 
