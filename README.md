@@ -1,11 +1,11 @@
 # ramaelectricstore       https://ramaelectricstore.com
 Links [Visit website](https://ramaelectricstore.com)
 
-Ramaelectricstore is an electrical sales and service company based in Nepal
+Ramaelectricstore is an electrical sales and service company based in Nepal. The purpose of the project was the user could easily connect and send requests through the web application.
 
 # Functions
 
-### Users side 
+### User side 
 - Can visit the website and get all the details about the services of the company.
 - Can setup appointment with ramaelectricstore according their time and date and immediately user will get appointment book success message with thier name.  
 - Can view the details about sales and new araivle items in ramaelectricstore comapny.
@@ -22,5 +22,4 @@ Ramaelectricstore is an electrical sales and service company based in Nepal
 
 
 
-![Screenshot](screenshot(294).png)
 
